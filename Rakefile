@@ -5,11 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ruby-git"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{simple ruby wrapper around git}
+    gem.description = %Q{simple ruby wrapper around git}
     gem.email = "stefan.penner@gmail.com"
     gem.homepage = "http://github.com/stefanpenner/ruby-git"
     gem.authors = ["Stefan Penner"]
+    gem.add_dependency "json"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
