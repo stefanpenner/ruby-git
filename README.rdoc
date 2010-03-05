@@ -2,6 +2,9 @@
 
 Description goes here.
 
+    Git.repo('~/src/core').ls_to_hash(:r)
+
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
@@ -15,3 +18,5 @@ Description goes here.
 == Copyright
 
 Copyright (c) 2010 Stefan Penner. See LICENSE for details.
+
+

@@ -10,7 +10,6 @@ begin
     gem.email = "stefan.penner@gmail.com"
     gem.homepage = "http://github.com/stefanpenner/ruby-git"
     gem.authors = ["Stefan Penner"]
-    gem.add_dependency "json"
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

@@ -1,5 +1,3 @@
-require 'json'
-
 module GitCommands
   module LsToHash
     module Helpers
@@ -44,10 +42,8 @@ module GitCommands
       end
     end
 
-    def ls_to_hash(ref=:HEAD,*options)
-      # todo: parse options and stuff
-      #
-      Helpers.build(ref(ref).ls(:r).run)
+    def ls_to_hash(*options)
+      Helpers.build(ls(options).run)
     end
   end
 end
