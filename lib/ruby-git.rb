@@ -5,7 +5,8 @@ class Git
   include GitCommands::Log
   include GitCommands::Ls
   include GitCommands::LsToHash
-
+  include GitCommands::RepoHistory
+  
   def initialize(path)
     @path = path
     @ref = :HEAD
