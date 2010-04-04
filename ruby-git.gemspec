@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-git}
-  s.version = "0.0.2"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Penner"]
-  s.date = %q{2010-03-05}
+  s.date = %q{2010-04-04}
   s.description = %q{simple ruby wrapper around git}
   s.email = %q{stefan.penner@gmail.com}
   s.extra_rdoc_files = [
@@ -24,10 +24,13 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/commands/all.rb",
+     "lib/commands/authors.rb",
      "lib/commands/defaults.rb",
      "lib/commands/log.rb",
      "lib/commands/ls.rb",
      "lib/commands/ls_to_hash.rb",
+     "lib/commands/repo_history.rb",
+     "lib/commands/shortlog.rb",
      "lib/helpers/ls_tree_to_hash.rb",
      "lib/ruby-git.rb",
      "ruby-git.gemspec",
