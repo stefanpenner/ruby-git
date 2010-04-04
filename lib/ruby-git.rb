@@ -1,4 +1,5 @@
 require 'commands/all'
+require 'fileutils'
 
 class Git
 
@@ -6,7 +7,9 @@ class Git
   include GitCommands::Ls
   include GitCommands::LsToHash
   include GitCommands::RepoHistory
-  
+  include GitCommands::Shortlog
+  include GitCommands::Authors
+
   def initialize(path)
     @path = path
     @ref = :HEAD
@@ -38,6 +41,7 @@ class Git
   def to_command
     "git #{@action} #{@ref} #{@options}"
   end
+
   private
 
     def build_options(options)
