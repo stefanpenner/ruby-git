@@ -9,6 +9,7 @@ class Git
   include GitCommands::RepoHistory
   include GitCommands::Shortlog
   include GitCommands::Authors
+  include GitCommands::Klone
 
   def initialize(path)
     @path = path

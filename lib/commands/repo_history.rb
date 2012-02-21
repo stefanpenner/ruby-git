@@ -1,14 +1,14 @@
 module GitCommands
   module RepoHistory
-   
+
     CHANGE_TYPES = { "A" => :add, "D" => :delete }
-   
+
     attr_reader :commits_json, :commits
-    
+
     def repo_history(*options)
-   
+
       commits = []
-   
+
       FileUtils.cd(@path) do
         IO.popen("git whatchanged --format=fuller | grep -v '^:.* M\t'") do |io|
           commit = {:message => "", :changes => {:add => [], :delete => []}}
@@ -21,8 +21,8 @@ module GitCommands
               commits << commit
               commit = {:message => "", :changes => {:add => [], :delete => []}}
             end
-            
-            case state 
+
+            case state
             when 0 # commit hash
               commit[:hash]        = line[7..-2]
             when 1 # original author
@@ -39,12 +39,12 @@ module GitCommands
             when 7 # file additions/deletions
               commit[:changes][CHANGE_TYPES[line[37].chr]] << line[39..-2] unless line[37].nil?
             end
-         
+
             state += 1 if state < 6
           end
         end
       end
-        
+
       return commits
     end
   end
