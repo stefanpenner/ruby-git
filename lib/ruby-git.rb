@@ -1,5 +1,6 @@
 require 'commands/all'
 require 'fileutils'
+require 'ruby-git/version'
 
 class Git
 
