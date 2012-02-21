@@ -3,6 +3,9 @@ require 'fileutils'
 require 'ruby-git/version'
 
 class Git
+  class << Git
+    attr_accessor :mock_remote
+  end
 
   include GitCommands::Log
   include GitCommands::Ls

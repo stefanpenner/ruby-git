@@ -5,6 +5,7 @@ module GitCommands
       @options = build_options(options)
 
       unless @cloned
+        from = Git.mock_remote || from
         `git clone #{from} #{@path} 2> /dev/null > /dev/null`
       end
 
