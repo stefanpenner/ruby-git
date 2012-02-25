@@ -2,7 +2,7 @@ require 'json'
 module GitHelpers
   module LsTreeToHashHelper
     def ls_to_hash
-      build_hash(ls.run)
+      build_hash(ls(:r).run)
     end
     private
     def build_ls_hash_hash(file)
