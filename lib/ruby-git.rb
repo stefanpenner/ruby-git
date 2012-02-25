@@ -4,7 +4,7 @@ require 'ruby-git/version'
 
 class Git
   class << Git
-    attr_accessor :mock_remote
+    attr_accessor :mock_remote, :logger
   end
 
   include GitCommands::Log
@@ -38,6 +38,7 @@ class Git
   def run
     results = []
     FileUtils.cd(@path) do
+      logger.info("git: #{to_command}") if logger
       results = IO.popen(to_command).readlines
     end
     results.map(&:strip)
